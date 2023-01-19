@@ -56,8 +56,8 @@ MIDDLEWARE = [
 ]
 
 # 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-# CSRF_COOKIE_SECURE=True
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+CSRF_COOKIE_SECURE=True
 ROOT_URLCONF = 'tguard.urls'
 
 TEMPLATES = [
