@@ -1,0 +1,1159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Threat Guardians</title>
+    <link rel="icon" href="static/logoicon.png" type="image/icon type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <style>
+      /* =Jumbotron Main
+-------------------------------------------------------------- */
+      .jumbotron.jumbotron-main {
+        height: 650px;
+        width: 100%;
+        color: #fff;
+        padding-left: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        position: relative;
+        margin: 0;
+      }
+
+      #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url("");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+        background: #6819e8; /* Old browsers */
+        background: -moz-linear-gradient(
+          left,
+          #6819e8 0%,
+          #7437d0 35%,
+          #615fde 68%,
+          #6980f2 100%
+        ); /* FF3.6-15 */
+        background: -webkit-linear-gradient(
+          left,
+          #6819e8 0%,
+          #7437d0 35%,
+          #615fde 68%,
+          #6980f2 100%
+        ); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(
+          to right,
+          #6819e8 0%,
+          #7437d0 35%,
+          #615fde 68%,
+          #6980f2 100%
+        ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6819e8', endColorstr='#6980f2',GradientType=1 ); /* IE6-9 */
+      }
+
+      .course {
+        margin: 10px;
+        border: 3px rgb(244, 242, 242) solid;
+        border-radius: 10px;
+        width: 350px;
+        height: 340px;
+        box-shadow: rgba(0, 0, 0, 0.533);
+        box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.351);
+      }
+      .buy {
+        display: grid;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      .info {
+        border: 1px #ffffff solid;
+        border-radius: 10px;
+        padding: 11px;
+        margin: -50px 20px 0 20px;
+        display: grid;
+        width: 300px;
+        height: 120px !important;
+        color: #565656;
+        position: relative;
+        background-color: #ffffff;
+        z-index: 2;
+      }
+      .csec a:link {
+        text-decoration: none !important;
+      }
+
+      .csec {
+        justify-content: space-around;
+        display: flex;
+        flex-direction: row;
+        flex-flow: row wrap;
+        flex: 1 100%;
+      }
+
+      .center {
+        display: block;
+        border-radius: 10px;
+        margin-right: auto;
+        position: relative;
+        height: 220px;
+        width: 345px;
+        z-index: 0;
+      }
+
+      .courses {
+        text-align: center;
+        padding-top: 20px;
+
+        font-weight: bolder;
+        font-size: 60px;
+      }
+
+      .sec p {
+        text-align: center;
+      }
+
+      .marquee {
+        position: relative;
+        width: 100vw;
+        max-width: 100%;
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .track {
+        position: absolute;
+        white-space: nowrap;
+        will-change: transform;
+        animation: marquee 50s linear infinite;
+      }
+
+      @keyframes marquee {
+        from {
+          transform: translateX();
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      #lpds p {
+        font-size: 4vmax;
+        font-weight: bold;
+        letter-spacing: 0.1rem;
+        text-align: center;
+      }
+      #lpds p span.typed-text {
+        font-weight: bold;
+        color: #ffffff;
+      }
+      #lpds p span.cursor {
+        display: inline-block;
+        background-color: #ccc;
+        margin-left: 0.1rem;
+        width: 1px;
+        animation: blink 1s infinite;
+      }
+      #lpds p span.cursor.typing {
+        animation: none;
+      }
+      @keyframes blink {
+        0% {
+          background-color: #ccc;
+        }
+        49% {
+          background-color: #ccc;
+        }
+        50% {
+          background-color: transparent;
+        }
+        99% {
+          background-color: transparent;
+        }
+        100% {
+          background-color: #ccc;
+        }
+      }
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-bs-spy="scroll" class="bg-white" data-bs-target=".navbar">
+    <script>
+      function validate(event) {
+        var key = event.which || event.keyCode || 0;
+        return (
+          (key >= 65 && key <= 90) ||
+          (key >= 97 && key <= 122) ||
+          key === 64 ||
+          key === 46 ||
+          key === 32 ||
+          key === 34 ||
+          key === 44 ||
+          key === 39 ||
+          (key >= 48 && key <= 57)
+        );
+      }
+    </script>
+    <!-- Navbar -->
+    <header id="top">
+      <nav
+        id="mynav"
+        class="navbar navbar-expand-lg navbar-scroll fixed-top shadow-0"
+      >
+        <div class="container p-2">
+          <a class="navbar-brand" href="https://threatguardians.com/"
+            ><img src="static/logoicon.png" height="90px" alt=""
+          /></a>
+          <h2 class="text-center p-0 m-0 d-block">
+            <span style="color: rgb(255, 255, 255)"
+              ><strong>Threat</strong></span
+            >
+            <span style="color: rgb(255, 255, 255)"
+              ><strong>Guardians</strong></span
+            ><br /><span
+              class="h6 text-center fw-bold"
+              style="color: rgb(255, 255, 255); position: relative; top: -10px"
+              >Guarding Data to Assets</span
+            >
+          </h2>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul id="top-menu" class="navbar-nav ms-auto fw-bold p-2">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#aboutus">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#team">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#courses">Courses</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#gallery">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#blogs">Blogs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#career">Career</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#feed">Feed</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar -->
+    </header>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
+    <div class="jumbotron jumbotron-main" id="home">
+      <div id="particles-js">
+        <canvas
+          class="particles-js-canvas-el"
+          width="1409"
+          height="319"
+          style="width: 100%; height: 100%"
+        ></canvas>
+      </div>
+      <!-- /.particles div -->
+
+      <div
+        class="p-0 m-0"
+        id="lpds"
+        style="left: 1vw !important; top: 35vh !important; position: relative"
+      >
+        <p>
+          <span class="typed-text"></span><span class="cursor">&nbsp;</span>
+        </p>
+
+        <a href="#ideology" data-id="ideology" class="scroll-link"> </a>
+      </div>
+    </div>
+
+    <!--External div -->
+    <div class="container">
+      <!--About us div-->
+      <span id="aboutus"></span>
+      <div class="container-fluid" style="padding: 50px 20px"></div>
+      <div class="anchor">
+        <div>
+          <div class="container py-1">
+            <h2 class="decorated"><span>About Us</span></h2>
+            <div class="row h-100 align-items-center py-4">
+              <div class="col-lg-6">
+                <p
+                  class="lead text-dark mb-0"
+                  style="font-size: clamp(0.5rem, 1rem, 1rem)"
+                >
+                  {%for group in about%}{{group}}{%endfor%}
+                </p>
+              </div>
+              <div class="col-lg-6 d-none d-lg-block">
+                <img src="static/smart.webp" alt="" class="img-fluid" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white py-5">
+          <div class="container py-5">
+            <div class="row align-items-center mb-5">
+              <div class="col-lg-6 order-2 order-lg-1">
+                <i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
+                <h2 class="font-weight-light text-black">Our Mission</h2>
+                <p class="font-italic text-dark mb-4">
+                  {%for group in mission%}{{group}}{%endfor%}
+                </p>
+              </div>
+              <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2">
+                <img
+                  src="static/missiontwo.gif"
+                  alt=""
+                  height="400"
+                  width="400"
+                  class="img-fluid mb-4 mb-lg-0"
+                />
+              </div>
+            </div>
+
+            <div class="row align-items-center">
+              <div class="col-lg-5 px-5 mx-auto">
+                <img
+                  height="400"
+                  width="400"
+                  src="static/newplan2.gif"
+                  alt=""
+                  class="img-fluid mb-4 mb-lg-0"
+                />
+              </div>
+              <div class="col-lg-6">
+                <i class="fa fa-leaf fa-2x mb-3 text-primary"></i>
+                <h2 class="font-weight-light text-black">Our Plan</h2>
+                <p class="font-italic text-dark">
+                  {%for group in plan%}{{group}}{%endfor%}
+                </p>
+              </div>
+            </div>
+
+            <div class="row align-items-center">
+              <div class="col-lg-6 order-2 order-lg-1">
+                <i class="fa fa-user-secret fa-2x mb-3 text-primary"></i>
+                <h2 class="font-weight-light text-black">Our Vision</h2>
+                <p class="font-italic text-dark">
+                  {%for group in vision%}{{group}}{%endfor%}
+                </p>
+              </div>
+              <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2">
+                <img
+                  src="static/newvision.gif"
+                  height="350"
+                  width="350"
+                  alt=""
+                  class="img-fluid mb-4 mb-lg-0"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- teams div -->
+      <span id="team"></span>
+      <div class="container-fluid" style="padding: 50px 20px"></div>
+      <div class="container pb-4">
+        <div class="row">
+          <div class="col">
+            <h2 class="decorated"><span>Leaderships</span></h2>
+          </div>
+        </div>
+        <div class="row text-center">
+          {% for dit in leadteam %}
+          <!-- Team item-->
+          <div class="col-lg-3 col-md-4 col-6 mb-3">
+            <div class="bg-white rounded shadow-sm py-5 px-4 h-100">
+              <img
+                src="{{dit.photo}}"
+                alt=""
+                class="border border p-1 border-dark mb-3 shadow-sm rounded-circle"
+                width="100"
+                height="100"
+              />
+              <h6 class="mb-0 text-danger fw-bold">{{dit.name}}</h6>
+              <span class="small text-uppercase text-dark">{{dit.desg}}</span>
+              <ul class="social mb-0 list-inline mt-3">
+                <li class="list-inline-item">
+                  <a href="{{dit.twitter}}" class="social-link"
+                    ><i class="fa fa-twitter"></i
+                  ></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="{{dit.linkedin}}" class="social-link"
+                    ><i class="fa fa-linkedin"></i
+                  ></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="mailto:{{dit.gmail}}" class="social-link"
+                    ><i class="fa fa-envelope"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- End-->
+          {% endfor %}
+        </div>
+      </div>
+      <div class="container py-4">
+        <div class="row">
+          <div class="col">
+            <h2 class="decorated"><span>Directors</span></h2>
+          </div>
+        </div>
+        <div class="row text-center">
+          {% for dit in dirteam %}
+          <!-- Team item-->
+          <div class="col-lg-3 col-md-4 col-6 mb-3">
+            <div class="bg-white rounded shadow-sm py-5 px-4 h-100">
+              <img
+                src="{{dit.photo}}"
+                alt=""
+                class="border border p-1 border-dark mb-3 shadow-sm rounded-circle"
+                width="100"
+                height="100"
+              />
+              <h6 class="mb-0 text-danger fw-bold">{{dit.name}}</h6>
+              <span class="small text-uppercase text-dark">{{dit.desg}}</span>
+              <ul class="social mb-0 list-inline mt-3">
+                <li class="list-inline-item">
+                  <a href="{{dit.twitter}}" class="social-link"
+                    ><i class="fa fa-twitter"></i
+                  ></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="{{dit.linkedin}}" class="social-link"
+                    ><i class="fa fa-linkedin"></i
+                  ></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="mailto:{{dit.gmail}}" class="social-link"
+                    ><i class="fa fa-envelope"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- End-->
+          {% endfor %} {% comment %}
+          <div class="container py-4">
+            <div class="row">
+              <div class="col">
+                <h2 class="decorated"><span>Team</span></h2>
+              </div>
+            </div>
+          </div>
+          {% for det in devteam%}
+          <!-- Team item-->
+          <div class="col-lg-3 col-md-4 col-6 pb-3">
+            <div class="bg-white rounded shadow-sm py-5 px-4 h-100">
+              <img
+                src="{{det.photo}}"
+                alt=""
+                class="border border p-1 border-dark mb-3 shadow-sm rounded-circle"
+                width="100"
+                height="100"
+              />
+              <h6 class="mb-0 text-danger fw-bold">{{det.name}}</h6>
+              <span class="small text-uppercase text-dark">{{det.desg}}</span>
+              <ul class="social mb-0 list-inline mt-3">
+                <li class="list-inline-item">
+                  <a href="{{det.linkedin}}" class="social-link"
+                    ><i class="fa fa-linkedin"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- End-->
+          {% endfor %} {% endcomment %}
+        </div>
+      </div>
+
+      <!--Services div-->
+      <span id="services"></span>
+      <div class="container-fluid" style="padding: 50px 20px"></div>
+      <div class="services pd anchor m-0 p-0">
+        <h2 class="decorated"><span>Services</span></h2>
+        <div class="row text-center p-2">
+          {% for ser in services %}
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="square"><i class="fas {{ser.icontext}}"></i></div>
+            <div class="serv">
+              <h5 class="fw-bold p-1 mt-2">{{ser.heading}}</h5>
+              <p class="text-dark">{{ser.text}}</p>
+            </div>
+          </div>
+          {%endfor%} {% for ser in linkservices %}
+          <div class="col-lg-3 col-md-4 col-6">
+            <div class="square"><i class="fas {{ser.icontext}}"></i></div>
+            <div class="serv">
+              <h5 class="fw-bold p-1 mt-2">{{ser.heading}}</h5>
+              <p class="text-dark">{{ser.text}}</p>
+              <a href="{{ser.link}}" class="bg-dark text-light p-2 rounded"
+                >View</a
+              >
+            </div>
+          </div>
+          {% endfor%}
+        </div>
+      </div>
+
+      <!--Courses-->
+      <span id="courses"></span>
+      <div class="container-fluid" style="padding: 50px 20px"></div>
+      <h2 class="decorated"><span>Popular Courses</span></h2>
+      <div class="csec pb-4">
+        {% for c in course %}
+        <div class="course">
+          <img src="{{c.image}}" class="center" alt="" />
+          <div class="info">
+            <h5 class="text-dark fw-bold">{{c.heading}}</h5>
+            <h6>
+              <i style="font-size: 24px" class="fa">&#xf073;&nbsp;</i
+              >{{c.duration}}
+            </h6>
+            <!-- <h6>
+              <i style="font-size: 24px" class="fa">&#xf017;</i> Course start:
+              {{c.start}}
+            </h6> -->
+          </div>
+          <div class="buy">
+            <a
+              href="mmailto:enquiry@threatguardians.com?subject=Request regarding quote for course : {{c.heading}}"
+            >
+              <button
+                class="btn btn-primary container-fluid {% if c.apply is False%} disabled {%endif%}"
+              >
+                GET QUOTE
+              </button></a
+            >
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+      <a href="courses">
+        <button
+          class="btn btn-info fw-bold container-fluid"
+          style="font-size: 1rem"
+        >
+          &#8668;View More&#8669;
+        </button></a
+      >
+      <!--Clients and Collaboration-->
+      <span id="cac"></span>
+      <div class="container-fluid" style="padding: 50px 20px"></div>
+      <h2 class="decorated"><span>Clients & Collaboration</span></h2>
+      <div class="marquee">
+        <div class="track">
+          <div class="content px-2" style="padding-top: 50px">
+            {% for w in clandco%}
+            <img src="{{w.image}}" width="auto;" height="120px" ; />
+            {%endfor%} {% for w in clandco%}
+            <img src="{{w.image}}" width="auto;" height="120px" ; />
+            {%endfor%} {% for w in clandco%}
+            <img src="{{w.image}}" width="auto;" height="120px" ; />
+            {%endfor%} {% for w in clandco%}
+            <img src="{{w.image}}" width="auto;" height="120px" ; />
+            {%endfor%} {% for w in clandco%}
+            <img src="{{w.image}}" width="auto;" height="120px" ; />
+            {%endfor%}
+          </div>
+        </div>
+      </div>
+
+      <!--Gallery div-->
+      <span id="gallery"></span>
+      <div class="container-fluid" style="padding: 50px 20px"></div>
+      <h2 class="decorated"><span>Gallery</span></h2>
+      <div class="photo-gallery">
+        <div class="container">
+          <div class="row photos">
+            {%for g in gallery%}
+            <div class="col-lg-3 col-md-4 col-6 item">
+              <a href="{{g.image}}" data-lightbox="photos"
+                ><img
+                  class="img-fluid h-100 rounded-3"
+                  src="{{g.image}}"
+                  style="object-fit: cover"
+              /></a>
+            </div>
+            {%endfor%}
+          </div>
+        </div>
+      </div>
+      <!--Blogs div-->
+      <span id="blogs"></span>
+      <div class="container-fluid" style="padding: 50px 20px"></div>
+      <h2 class="decorated"><span>Blogs</span></h2>
+      <div class="anchor mt-2 py-4">
+        <div class="row mb-2">
+          {% for b in blogs %}
+          <div class="col-md-6 pb-3">
+            <div class="card flex-md-row mb-4 box-shadow h-100">
+              <div class="card-body d-flex flex-column align-items-start">
+                <strong class="d-inline-block mb-2 text-danger"
+                  >{{b.type}}</strong
+                >
+                <h3 class="mb-0">
+                  <a class="text-dark" href="{{b.link}}">{{b.heading}}</a>
+                </h3>
+                <div class="mb-1 text-muted">{{b.date}}</div>
+                <p class="card-text mb-auto text-dark">{{b.desc}}</p>
+                <a href="{{b.link}}">Continue reading</a>
+              </div>
+              <img
+                class="card-img-right flex-auto d-none d-md-block"
+                width="150"
+                height="150"
+                src="{{b.image}}"
+                style="object-fit: cover"
+              />
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!--Contact div-->
+      <span id="contact"></span>
+      <div class="container-fluid" style="padding: 50px 20px"></div>
+      <h2 class="decorated"><span>Contact</span></h2>
+      <div class="anchor mt-2">
+        <div class="contact_info">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-10 offset-lg-1">
+                <div
+                  class="contact_info_container d-flex flex-lg-row flex-column justify-content-between align-items-between"
+                >
+                  <!-- Contact Item -->
+                  <div
+                    class="contact_info_item d-flex flex-row align-items-center justify-content-start"
+                  >
+                    <div class="contact_info_image">
+                      <img
+                        src="https://img.icons8.com/office/24/000000/iphone.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="contact_info_content">
+                      <div class="contact_info_title">Phone</div>
+                      <div class="contact_info_text">
+                        <a href="tel:+919616619764">+91 9616 619 764</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Contact Item -->
+                  <div
+                    class="contact_info_item d-flex flex-row align-items-center justify-content-start"
+                  >
+                    <div class="contact_info_image">
+                      <img
+                        src="https://img.icons8.com/ultraviolet/24/000000/filled-message.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="contact_info_content">
+                      <div class="contact_info_title">Email</div>
+                      <div class="contact_info_text">
+                        <a href="mailto:enquiry@threatguardians.com">
+                          enquiry@threatguardians.com</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Contact Item -->
+                  <div
+                    class="contact_info_item d-flex flex-row align-items-center justify-content-start"
+                  >
+                    <div class="contact_info_image">
+                      <img
+                        src="https://img.icons8.com/ultraviolet/24/000000/map-marker.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="contact_info_content">
+                      <div class="contact_info_title">Address</div>
+                      <div class="contact_info_text">
+                        <a href="https://goo.gl/maps/kxh1E1wtkGXGALEW7"
+                          >Kanpur,UP</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+
+        <div class="contact_form">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-10 offset-lg-1">
+                <div class="contact_form_container">
+                  <div class="contact_form_title text-dark">Get in Touch</div>
+                  <form
+                    method="POST"
+                    onSubmit="alert('Thank you for your feedback.');"
+                  >
+                    {% csrf_token %}
+                    <div
+                      class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between"
+                    >
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        class="contact_form_name input_field"
+                        placeholder="Your name"
+                        required="required"
+                        data-error="Name is required."
+                        style="border-color: rgba(0, 0, 0, 0.5); color: #111111"
+                        onkeypress="return validate(event)"
+                        onpaste="return false;"
+                        ondrop="return false;"
+                        autocomplete="off"
+                      />
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="contact_form_email input_field"
+                        placeholder="Your email"
+                        required="required"
+                        data-error="Email is required."
+                        style="border-color: rgba(0, 0, 0, 0.5); color: #111111"
+                        onkeypress="return validate(event)"
+                        onpaste="return false;"
+                        ondrop="return false;"
+                        autocomplete="off"
+                      />
+                      <input
+                        type="text"
+                        id="phone"
+                        name="phone"
+                        class="contact_form_phone input_field"
+                        placeholder="Your phone number"
+                        style="border-color: rgba(0, 0, 0, 0.5); color: #111111"
+                        onkeypress="return validate(event)"
+                        onpaste="return false;"
+                        ondrop="return false;"
+                        autocomplete="off"
+                      />
+                    </div>
+                    <div class="contact_form_text">
+                      <textarea
+                        id="question"
+                        class="text_field contact_form_message"
+                        name="question"
+                        rows="4"
+                        placeholder="Message"
+                        required="required"
+                        data-error="Please, write us a message."
+                        style="border-color: rgba(0, 0, 0, 0.5); color: #111111"
+                        onkeypress="return validate(event)"
+                        onpaste="return false;"
+                        ondrop="return false;"
+                        autocomplete="off"
+                      ></textarea>
+                    </div>
+                    <div class="contact_form_button">
+                      <button
+                        type="submit"
+                        class="button btn btn-primary contact_submit_button"
+                      >
+                        Send Message
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Career div-->
+      <span id="career"></span>
+      <div class="container-fluid" style="padding: 50px 20px"></div>
+      <h2 class="decorated"><span>Career</span></h2>
+      <div class="anchor m-2">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h3 class="text-dark">Jobs Openings</h3>
+            <p class="lead">
+              More Than Just A Job, We Offer An Opportunity To Grow!
+            </p>
+          </div>
+          {% for c in career%}
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="d-flex flex-column flex-lg-row">
+                <span class="avatar avatar-text rounded-3 me-4 mb-2"
+                  >{{c.block}}</span
+                >
+                <div class="row flex-fill">
+                  <div class="col-sm-5">
+                    <h4 class="h5">{{c.heading}}</h4>
+                    <span class="badge bg-success">{{c.jobdesc}}</span>
+                  </div>
+                  <div class="col-sm-4 py-2">
+                    <span class="badge bg-warning">{{c.reqskill}}</span>
+                  </div>
+                  <div class="col-sm-3 text-lg-end">
+                    <a
+                      href="#contact"
+                      class="btn btn-primary {% if c.apply is False %} disabled {%endif%}"
+                      >Apply</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+      </div>
+    </div>
+
+    <!-- Feed div-->
+    <span id="feed"></span>
+    <div class="container-fluid" style="padding: 50px 20px"></div>
+    <h2 class="decorated container"><span>Feed</span></h2>
+    <div class="container" style="padding-left: 5vw">
+      <div class="row py-1" style="justify-content: space-evenly">
+        <div class="col-lg-4 col-md-6 col-12">
+          <a
+            class="twitter-timeline"
+            href="https://twitter.com/ThreatGuardians"
+            height="400px"
+            width="350px"
+            >Tweets by TG</a
+          >
+        </div>
+        <div class="height:400px; width:400px col-lg-4 col-md-6 col-12">
+          <iframe
+            class="py-4"
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fthreatguardians&tabs=timeline&width=400&height=400&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+            width="350"
+            height="400"
+            style="border: none; overflow: hidden"
+            scrolling="no"
+            frameborder="0"
+            allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          ></iframe>
+        </div>
+        <div class="height:400px; width:350px col-lg-4 col-md-6 col-12">
+          <iframe
+            width="350"
+            height="400"
+            src="https://www.youtube.com/embed/YSfkK9PILfI?controls=0?autoplay=1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid" style="padding: 40px 20px"></div>
+    <!-- Footer -->
+    <footer
+      class="text-center text-white mt-5"
+      style="background-color: #111111"
+    >
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!-- Section: Images -->
+        <div>
+          <div class="row">
+            <div class="col">
+              <h6 class="p-2 fw-bold" style="color: rgb(231, 231, 231)">
+                SUPPORTED BY
+              </h6>
+              <img
+                src="static/siic.png"
+                style="width: auto; height: 70px"
+                alt=""
+              />
+            </div>
+            <div class="col">
+              <h6 class="p-2 fw-bold" style="color: rgb(231, 231, 231)">
+                RECOGNIZED BY
+              </h6>
+              <img
+                src="static/reco.png"
+                style="width: auto; height: 60px"
+                alt=""
+              />
+            </div>
+            <div class="col">
+              <h6 class="p-2 fw-bold" style="color: rgb(231, 231, 231)">
+                WORKING WITH
+              </h6>
+              <marquee behavior="scroll" direction="right">
+                {% for w in working%}
+                <img src="{{w.image}}" width="auto;" height="70px" ; />
+                {%endfor%}
+              </marquee>
+            </div>
+          </div>
+        </div>
+        <!-- Section: Images -->
+      </div>
+
+      <!-- Copyright -->
+      <div
+        class="text-center"
+        style="
+          background: linear-gradient(to right, #39005a, #4a0078, #7700c2);
+          color: rgb(255, 255, 255);
+        "
+      >
+        © Copyright:
+        <a style="color: rgb(216, 216, 216)" href="https://threatguardians.com/"
+          ><span class="fw-bold text-white">Threat Guardians.</span></a
+        >All Rights Reserved
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+    <!-- MDB -->
+    <script src="{% static 'script.js' %}"></script>
+    <script
+      src="https://kit.fontawesome.com/018635e550.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+    <script>
+      particlesJS("particles-js", {
+        particles: {
+          number: {
+            value: 80,
+            density: {
+              enable: true,
+              value_area: 800,
+            },
+          },
+          color: {
+            value: "#ffffff",
+          },
+          shape: {
+            type: "circle",
+            stroke: {
+              width: 0,
+              color: "#000000",
+            },
+            polygon: {
+              nb_sides: 5,
+            },
+            image: {
+              src: "img/github.svg",
+              width: 100,
+              height: 100,
+            },
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+            anim: {
+              enable: false,
+              speed: 1,
+              opacity_min: 0.1,
+              sync: false,
+            },
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: {
+              enable: false,
+              speed: 40,
+              size_min: 0.1,
+              sync: false,
+            },
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 6,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 1200,
+            },
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: {
+              enable: true,
+              mode: "grab",
+            },
+            onclick: {
+              enable: true,
+              mode: "push",
+            },
+            resize: true,
+          },
+          modes: {
+            grab: {
+              distance: 140,
+              line_linked: {
+                opacity: 1,
+              },
+            },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 3,
+            },
+            repulse: {
+              distance: 200,
+              duration: 0.4,
+            },
+            push: {
+              particles_nb: 4,
+            },
+            remove: {
+              particles_nb: 2,
+            },
+          },
+        },
+        retina_detect: true,
+      });
+      const typedTextSpan = document.querySelector(".typed-text");
+      const cursorSpan = document.querySelector(".cursor");
+
+      const textArray = [
+      {%for c in car%}"{{c}}",{%endfor%}
+      ];
+      const typingDelay = 200;
+      const erasingDelay = 100;
+      const newTextDelay = 2000; // Delay between current and next text
+      let textArrayIndex = 0;
+      let charIndex = 0;
+
+      function type() {
+        if (charIndex < textArray[textArrayIndex].length) {
+          if (!cursorSpan.classList.contains("typing"))
+            cursorSpan.classList.add("typing");
+          typedTextSpan.textContent +=
+            textArray[textArrayIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(type, typingDelay);
+        } else {
+          cursorSpan.classList.remove("typing");
+          setTimeout(erase, newTextDelay);
+        }
+      }
+
+      function erase() {
+        if (charIndex > 0) {
+          if (!cursorSpan.classList.contains("typing"))
+            cursorSpan.classList.add("typing");
+          typedTextSpan.textContent = textArray[textArrayIndex].substring(
+            0,
+            charIndex - 1
+          );
+          charIndex--;
+          setTimeout(erase, erasingDelay);
+        } else {
+          cursorSpan.classList.remove("typing");
+          textArrayIndex++;
+          if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+          setTimeout(type, typingDelay + 1100);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // On DOM Load initiate the effect
+        if (textArray.length) setTimeout(type, newTextDelay + 250);
+      });
+    </script>
+  </body>
+</html>
